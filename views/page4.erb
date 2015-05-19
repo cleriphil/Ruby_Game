@@ -1,9 +1,12 @@
 <h1>Great work! Now you created a rope</h1>
 
 <hr>
-
-# show inventory list to see rope added
-
+<h4> Inventory</h4>
+<% @items.each do |item| %>
+  <ul>
+    <li><%= item.description %> </li>
+  </ul>
+<% end %>
 <hr>
 
 <h3>You now use your new rope to start rappelling down from the ledge to the cave floor below. Before you reach the bottom, your rope suddenly snaps. Did you really think six pieces of string would hold your weight?</h3>

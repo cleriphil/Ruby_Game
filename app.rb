@@ -6,6 +6,15 @@ get('/') do
   erb(:index)
 end
 
+get('/page0') do
+  sword = Item.create({:description => "Sword"})
+  snack = Item.create({:description => "Snack"})
+  ipod = Item.create({:description => "iPod"})
+  potion = Item.create({:description => "Potion"})
+  @items = Item.all()
+  erb(:page0)
+end
+
 get('/page1') do
   erb(:page1)
 end
@@ -14,6 +23,7 @@ get('/page2') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "get" && answer2 == "cave_entrance"
+    key = Item.create({:description => "Key"})
     erb(:page2)
   else
     erb(:error)
@@ -24,7 +34,7 @@ get('/page3') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "new" && answer2 == "save"
-    # @items = Item.all()
+    @items = Item.all()
     erb(:page3)
   else
     erb(:error)
@@ -32,6 +42,8 @@ get('/page3') do
 end
 
 get('/page4') do
+  rope = Item.create({:description => "Rope"})
+  @items = Item.all()
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   answer3 = params.fetch('third_spot')
@@ -46,6 +58,8 @@ get('/page5') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "find" && answer2 == "total_potions"
+    # found_item = Item.find(params.fetch('4').to_i())
+    # found_item.delete
     erb(:page5)
   else
     erb(:error)
