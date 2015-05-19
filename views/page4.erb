@@ -1,0 +1,38 @@
+<h1>Great work! Now you created a rope</h1>
+
+<hr>
+
+# show inventory list to see rope added
+
+<hr>
+
+<h3>You now use your new rope to start rappelling down from the ledge to the cave floor below. Before you reach the bottom, your rope suddenly snaps. Did you really think six pieces of string would hold your weight?</h3>
+
+<hr>
+
+<h4>You scraped your knee on the way down. You begin to cry but remember you have a potion in your bag that you can use to heal your wound.</h4>
+
+<h4>After you find your potion and use it, it will be gone.</h4>
+
+<h4>Try this: <br>
+  def fix_boo_boo <br>
+    total_potions = 1 <br>
+    potion = Item.XXXXXX(params.fetch('potion_id').to_i)<br>
+    potion.drink #raise health <br>
+    if potion.drink <br>
+      XXXXXX -= 1  # you just drank your only potion right <br>
+    end <br>
+  end <br>
+
+  knee.fix_boo_boo
+</h4>
+
+<form action='/page5'>
+  <label for='first_spot'>Answer for the first missing piece</label>
+  <input id='first_spot' name='first_spot' type='text'>
+  <br>
+  <label for='second_spot'>Answer for the second missing piece</label>
+  <input id='second_spot' name='second_spot' type='text'>
+  <br>
+  <button type='submit'>Fix Your Boo Boo</button>
+</form>
