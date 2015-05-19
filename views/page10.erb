@@ -1,0 +1,19 @@
+<% if @error == true %>
+  <p>You screwed up. Looks like you're having some trouble saving. Try again.</p>
+<% end %>
+
+<p>Break time</p>
+
+<p>Whew! What a fight. I think it's time to take a little break. Looks like I should save my progress on git</p>
+
+<form action='/page10' method='post'>
+  <div class='form-group'>
+    <label for='answer1'>git </label>
+    <input id='answer1' name='answer1' type='text' placeholder='enter command' required>
+    <label for='answer2'>git </label>
+    <input id='answer2' name='answer2' type='text' placeholder='enter command' required>
+    <label for='answer3'>git </label>
+    <input id='answer3' name='answer3' type='text' placeholder='enter command' required>
+  </div>
+  <button class='submit'>submit</button>
+</form>

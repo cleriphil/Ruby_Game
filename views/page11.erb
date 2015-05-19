@@ -1,0 +1,21 @@
+<% if @error == true %>
+  <p>The wizard is coming back from his water break! Hurry! Try messing up the wizard's scripts, again.</p>
+
+<% else %>
+  <p>Don't you feel super well rested, now?</p>
+  <p>Oh my, there is a wizard in our path. He is protected the door to the chamber that has the ruby.</p>
+  <p>He's holding scripts and chanting evil spells. Oh look, he's getting a drink of water.</p>
+  <p>Now is our chance to stop him from completing his spells. How can we do that?</p>
+  <p>Hmm, it looks like the scripts are in a particular order....</p>
+
+<% end %>
+
+<p>def stop_spell</p>
+<form action='/page11' method='post'>
+  <div class='form-group'>
+    <label for='answer'>self.</label>
+    <input id='answer' name='answer' type='text' placeholder='enter method'>
+  </div>
+    <button class='btn-default'>Submit</button>
+</form>
+<p>end</p>

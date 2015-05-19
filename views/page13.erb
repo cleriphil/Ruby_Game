@@ -1,0 +1,21 @@
+<% if @error == true %>
+  <p>The monster is still alive. Try again.</p>
+  <p>Hint: monster = "monster"
+  <br> monster.kill_monster()
+  </p>
+<% else %>
+  <p>We enter the room that holds the ruby gem. There is a monster.</p>
+  <p>We must use our enchanted sword to behead the monster.</p>
+  <p>Hint: the monster is a string</p>
+<% end %>
+
+<p>def kill_monster</p>
+<form action='/page13' method='post'>
+  <div class='form-group'>
+    <input id='answer1' name='answer1' type='text' placeholder='enter number of hits'>
+    <label for='answer2'>.times() do<br>self.</label>
+    <input id='answer2' name='answer2' type='text' placeholder='enter method'>
+  </div>
+  <button class='btn-default'>Submit</button>
+</form>
+<p>end</p>

@@ -1,0 +1,19 @@
+<% if @error == false %>
+  <p>The goblin's dead.</p>
+  <p>You walk through the passage and come in contact with cockroaches!</p>
+  <p></p>
+<% else %>
+  <p>Oh no! The cockroaches are multiplying.</p>
+<% end %>
+
+<form action='/page9' method='post'>
+  <div class='form-group'>
+    <label for='item'>What item should you use to fight them off?</label>
+    <select id='item' name='item' type='text'>
+      <% Item.all.each do |item| %>
+        <option value='<%= item.id %>'><%= item.description %></option>
+      <% end %>
+    </select>
+    <button class='submit'>submit</button>
+  </div>
+</form>
