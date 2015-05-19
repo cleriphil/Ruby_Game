@@ -1,6 +1,6 @@
 <% if @error == true %>
   <p>The enchantment didn't work. Try again. Here's a clue: </p>
-  <p>your_sword._____({description: "enchanted sword"})</p>
+  <p>sword._____({description: "enchanted sword"})</p>
 <% else %>
   <p>The wizard is back and he is not happy. He says, "Who dares shuffles my script?"</p>
   <p>He says, "Whatever, the monster in the room will .destroy you."</p>
@@ -16,7 +16,9 @@
         <div class='form-group'>
           <label for='answer'>self.</label>
           <input id='answer' name='answer' type='text' placeholder='enter method'>
-        </div>
+          ({:description => 'enchanted sword'})
+          
+      </div>
       <button class='btn-default'>Submit</button>
 
   <p>end</p>
