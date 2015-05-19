@@ -39,10 +39,6 @@ post('/page9') do
   end
 end
 
-get('/page10') do
-  erb(:page10)
-end
-
 post('/page10') do
   answer1 = params.fetch('answer1')
   answer2 = params.fetch('answer2')
@@ -52,5 +48,27 @@ post('/page10') do
   else
     @error = true
     erb(:page10)
+  end
+end
+
+post('/page11') do
+  answer = params.fetch('answer')
+  if answer == 'shuffle'
+    erb(:page12)
+  else
+    @error = true
+    erb(:page11)
+  end
+end
+
+patch('/page12') do
+  answer = params.fetch('answer')
+  if answer == "update"
+    item = Item.find_by_description('sword')
+    item.update({:description => 'enchanted sword'})
+    erb(:page13)
+  else
+    @error = true
+    erb(:page12)
   end
 end
