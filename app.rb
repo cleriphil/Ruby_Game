@@ -78,7 +78,7 @@ get('/page6') do
   end
 end
 
-post('/page6error') do
+get('/page6error') do
     erb(:errordoor)
 end
 
@@ -131,7 +131,7 @@ post('/page10') do
   answer1 = params.fetch('answer1')
   answer2 = params.fetch('answer2')
   answer3 = params.fetch('answer3')
-  if(answer1 == 'init')&(answer2 == 'add .')&(answer3.include?('commit -m'))
+  if(answer1 == 'init')&(answer2 == 'add .')&(answer3.include?('commit -m "'))
     erb(:page11)
   else
     @error = true
@@ -161,7 +161,7 @@ patch('/page12') do
   answer = params.fetch('answer')
   if answer == "update"
     item = Item.find_by_description('Sword')
-    item.update({:description => 'enchanted sword'})
+    item.update({:description => 'Enchanted Sword'})
     @error = false
     erb(:page13)
   else

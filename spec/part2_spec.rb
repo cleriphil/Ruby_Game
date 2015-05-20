@@ -4,9 +4,9 @@ Capybara.app = Sinatra::Application
 
 describe('the path of the cockroaches enemy page', {:type => :feature}) do
   it('display the cockroaches and a dropdown of items the user will use to fight them off') do
-    test_item = Item.create({:description => 'torch'})
+    test_item = Item.create({:description => 'Torch'})
     visit('/page9')
-    select('torch')
+    select('Torch')
     click_button('submit')
     expect(page).to have_content('Break time')
   end
