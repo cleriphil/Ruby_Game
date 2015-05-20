@@ -141,7 +141,6 @@ post('/page8') do
 end
 
 get('/page9') do
-  @error = false
   erb(:page9)
 end
 
