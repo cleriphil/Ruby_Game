@@ -1,5 +1,5 @@
 <% if @error == true %>
-  <p>That string and array looks like it may come in handy. I wonder what you can do with it.</p>
+  <p>Maybe you could put enough "string" to reach the bottom into a line (use that rope_array over there?) and connect them somehow...</p>
 <% end %>
 
 <% if @error_a == true %>
@@ -17,28 +17,24 @@
   </ul>
 <% end %><hr>
 
-
-
 <h3>Continuing on your path through the cave you come to a large open wooden door. As you walk through the entrance, the door suddenly slams closed behind you. You attempt to open the door to no avail. Looking around to the front you notice a metal ring anchored to the cave walls with a pile of pieces of "string". As you keep exploring the area you notice a large drop off to the cave floor below. You think you can just make out a number of doors at the bottom. </h3>
 
-<h4>It looks like six pieces of "string" tied or <em>joined</em> together to form a rope could reach the bottom...</h4>
-
-<h4>Look at this, there is an empty array in the corner...hmm I wonder...</h4>
+<h4>It looks like six pieces of "string" tied or <em>joined</em> together to form a rope could reach the bottom... Look at this! There is an empty array in the corner...hmm I wonder...</h4>
 
 <h4> Lets try this, <br>
   def make_rope<br>
-  rope_array = [] <br>
+  rope_array = [ ] <br>
 <form action='/page3' method='post'>
-  <input id='first_spot' name='first_spot' type='text' placeholder='number of hits' required>
+  <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='number of hits' required>
   <label for='first_spot'>.times do</label>
   <br>
   <label for='second_spot'>rope_array.</label>
-  <input id='second_spot' name='second_spot' type='text' placeholder='method' required>
+  <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='method' required>
   ('string') <br>
   end
   <br>
   <label for='third_spot'>rope = rope_array.</label>
-  <input id='third_spot' name='third_spot' type='text' placeholder='method' required>
+  <input id='third_spot' name='third_spot' type='text' autocomplete='off' placeholder='method' required>
   <br>end</h4>
   <button type='submit'>Create Rope</button>
 </form>

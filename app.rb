@@ -43,10 +43,10 @@ get('/page2') do
 end
 
 post('/page2') do
+  @items = Item.all()
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "new" && answer2 == "save"
-    @items = Item.all()
     erb(:page3)
   else
     @error = true
@@ -74,6 +74,7 @@ post('/page3') do
   answer3 = params.fetch('third_spot')
   @items = Item.all()
   if answer1 == "6" && ((answer2 == "push") | (answer2 == "push()")) && ((answer3 == "join") | (answer3 == "join()"))
+    Item.create({:description => "Rope"})
     erb(:page4)
   else
     @error = true
@@ -92,11 +93,12 @@ get('/page4') do
 end
 
 post('/page4') do
-  rope = Item.create({:description => "Rope"})
   @items = Item.all()
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "find" && answer2 == "total_potions"
+    found_item = Item.find_by_description("Potion")
+    found_item.delete
     erb(:page5)
   else
     @error = true
@@ -185,13 +187,36 @@ get('/page9') do
   erb(:page9)
 end
 
+# post('/page9') do     #this is what it was before
+#   item_id = params.fetch('item')
+#   item = Item.find(item_id)
+#   if item.description == 'Torch'
+#     erb(:page10)
+#   else
+#     @error = true
+#     erb(:page9)
+#   end
+# end
+
 post('/page9') do
   item_id = params.fetch('item')
   item = Item.find(item_id)
   if item.description == 'Torch'
     erb(:page10)
-  else
-    @error = true
+  elsif item.description == 'Sword'
+    @error = 1
+    erb(:page9)
+  elsif item.description == 'iPod'
+    @error = 2
+    erb(:page9)
+  elsif item.description == 'Snack'
+    @error = 3
+    erb(:page9)
+  elsif item.description == 'Rope'
+    @error = 4
+    erb(:page9)
+  else item.description == 'Key'
+    @error = 5
     erb(:page9)
   end
 end

@@ -1,14 +1,13 @@
 <% if @error == true %>
   <p>The enchantment didn't work. Try again. Here's a clue: </p>
-  <p>sword._____({description: "enchanted sword"})</p>
-<% else %>
-  <p>The wizard is back and he is not happy. He says, "Who dares shuffles my script?"</p>
-  <p>He says, "Whatever, the monster in the room will .destroy you."</p>
-  <p>The wizard leaves.</p>
-  <p>Oh, look at the enchantment powder on the ground. Use it to make your sword enchanted.</p>
+  <p>We're changing the properties of the sword. Make sure everything is up to date.</p>
 <% end %>
+<h1>Your stop_spell method works!</h1>
+<hr>
+<h3>When the wizard returns he is furious. He shouts "Who dares shuffles my script? No matter, the monster behind the door is perfectly capable of defending the ruby. He will .destory anything or anyone in his path." As the wizard turns to leave you notice he accidently drops a small pouch. You run over to investigate what it was and see that it is enchantment powder. You could probably use it on your sword for the battle that lies ahead. </h3>
 
-  <p>def enchant</p>
+<h4>
+  def enchant
 
     <form action='/page12' method='post'>
       <input name="_method" type="hidden" value="patch">
@@ -17,7 +16,7 @@
           <label for='answer'>self.</label>
           <input id='answer' name='answer' type='text' placeholder='enter method' autocomplete='off' required>
           ({:description => 'enchanted sword'})
+          <br>end</h4>
       </div>
-      <p>end</p>
-      <button class='btn btn-sm btn-default'>Submit</button>
+      <button class='btn btn-sm btn-default'>Enchant Sword</button>
     </form>

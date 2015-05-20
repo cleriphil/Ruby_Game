@@ -1,23 +1,21 @@
 <% if @error == true %>
   <p>The wizard is coming back from his water break! Hurry! Try messing up the wizard's scripts, again.</p>
-
-<% else %>
-  <p>Don't you feel super well rested, now?</p>
-  <p>Oh my, there is a wizard in our path. He is protected the door to the chamber that has the ruby.</p>
-  <p>He's holding scripts and chanting evil spells. Oh look, he's getting a drink of water.</p>
-  <p>Now is our chance to stop him from completing his spells. How can we do that?</p>
-  <p>Hmm, it looks like the scripts are in a particular order....</p>
-
 <% end %>
 
-<p>def stop_spell</p>
+<h1>Don't you feel super well rested and your memories fully formed?</h1>
+<hr>
+<h3>
+Oh my! There is a wizard in our path! He appears to be protecting the door to the chamber that has the sacred ruby. You duck behind a rock and hide while you observe what he is doing. You realize he is reading from scripts and chanting evil spells to create a barrier around the door. Oh look, he's getting a drink of water! Now is our chance to stop him from continuing his spells! How can we do that? Hmm, it looks like the scripts are in a particular order....</h3>
+
+<h4>
+def stop_spell
 <form action='/page11' method='post'>
   <div class='form-group'>
     <label for='answer'>self.</label>
     <input id='answer' name='answer' type='text' placeholder='enter method' autocomplete='off' required>
+  <br>end</h4>
   </div>
-  <p>end</p>
-    <button class='btn btn-sm btn-default'>Submit</button>
+  <button class='btn btn-sm btn-default'>Stop Spell</button>
 </form>
 
 <!-- example of possible styling: -->
