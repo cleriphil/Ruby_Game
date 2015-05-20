@@ -145,13 +145,36 @@ get('/page9') do
   erb(:page9)
 end
 
+# post('/page9') do     #this is what it was before
+#   item_id = params.fetch('item')
+#   item = Item.find(item_id)
+#   if item.description == 'Torch'
+#     erb(:page10)
+#   else
+#     @error = true
+#     erb(:page9)
+#   end
+# end
+
 post('/page9') do
   item_id = params.fetch('item')
   item = Item.find(item_id)
   if item.description == 'Torch'
     erb(:page10)
-  else
-    @error = true
+  elsif item.description == 'Sword'
+    @error = 1
+    erb(:page9)
+  elsif item.description == 'iPod'
+    @error = 2
+    erb(:page9)
+  elsif item.description == 'Snack'
+    @error = 3
+    erb(:page9)
+  elsif item.description == 'Rope'
+    @error = 4
+    erb(:page9)
+  else item.description == 'Key'
+    @error = 5
     erb(:page9)
   end
 end
