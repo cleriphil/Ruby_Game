@@ -145,7 +145,7 @@ end
 
 post('/page11') do
   answer = params.fetch('answer')
-  if answer == 'shuffle'
+  if (answer == 'shuffle') | (answer == 'shuffle()') | (answer == 'shuffle!') | (answer == 'shuffle!()')
     erb(:page12)
   else
     @error = true
@@ -177,7 +177,10 @@ end
 post('/page13') do
   answer1 = params.fetch('answer1').to_i
   answer2 = params.fetch('answer2')
-  if (answer1 > 5) & (answer2.include?('chop'))
+  if (answer1 > 5) & ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
+    Item.all.each() do |item|
+      item.destroy
+    end
     erb(:page14)
   else
     @error = true
