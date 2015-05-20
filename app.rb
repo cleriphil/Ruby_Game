@@ -50,7 +50,12 @@ post('/page2') do
 end
 
 get('/page3') do
-  erb(:page3)
+  @items = Item.all()
+  if Item.all().empty?()
+    erb(:error_gifts)
+  else
+    erb(:page3)
+  end
 end
 
 post('/page3') do
@@ -58,7 +63,7 @@ post('/page3') do
   answer2 = params.fetch('second_spot')
   answer3 = params.fetch('third_spot')
   @items = Item.all()
-  if answer1 == "6" && answer2 == "push" && answer3 == "join"
+  if answer1 == "6" && ((answer2 == "push") | (answer2 == "push()")) && ((answer3 == "join") | (answer3 == "join()"))
     erb(:page4)
   else
     @error = true
@@ -116,7 +121,7 @@ end
 post('/page7') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
-  if answer1 == "upcase" && answer2 == "end"
+  if answer2 == "end" && ((answer1 == 'upcase') | (answer1 == 'upcase()') | (answer1 == 'upcase!') | (answer1 == 'upcase!()'))
     erb(:page8)
   else
     @error = true
@@ -132,7 +137,7 @@ post('/page8') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   answer3 = params.fetch('third_spot')
-  if answer1 == "each" && answer2 == "shift" && answer3 == "part"
+  if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()")) && answer3 == "part"
     erb(:page9)
   else
     @error = true
