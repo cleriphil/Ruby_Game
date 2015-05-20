@@ -1,5 +1,5 @@
 <% if @error == true %>
-<p>You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last!</p>
+<p>Not good enough! You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last!</p>
 
 <% else %>
 
@@ -8,6 +8,13 @@
 <h3>The goblin momentarily loses all confidence in himself and stops his charge.  You need to pick a weapon to quckly dispatch the goblin before he ragains his former courage.  The only way to truly kill a goblin is to remove all his limbs and then his head.</h3>
 
 <% end %>
+
+<% if @error_a == true %>
+<p>Your 'argument' is wrong. Try again.</p>
+<% elsif @error_b == true %>
+<p>One or more of your 'methods' is wrong. Try again.</p>
+<% end %>
+
 #dropdown select for sword
 
 <h4>

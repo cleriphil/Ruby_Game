@@ -9,6 +9,12 @@
 <% end %>
 <hr>
 
+<% if @error_a == true %>
+  <p>Your 'server request' answer is wrong. Try again.</p>
+<% elsif @error_b == true %>
+  <p>Your 'erb file name' is wrong. Try again.</p>
+<% end %>
+
 <h3>Try filling in the gaps:<br>
 
 

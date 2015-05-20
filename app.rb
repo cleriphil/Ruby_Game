@@ -29,6 +29,11 @@ post('/page1') do
     erb(:page2)
   else
     @error = true
+      if answer1 == "get"
+        @error_b = true
+      elsif answer2 == "cave_entrance"
+        @error_a = true
+      end
     erb(:page1)
   end
 end
@@ -45,6 +50,11 @@ post('/page2') do
     erb(:page3)
   else
     @error = true
+    if answer1 == "new"
+      @error_b = true
+    elsif answer2 == "save"
+      @error_a = true
+    end
     erb(:page2)
   end
 end
@@ -67,6 +77,12 @@ post('/page3') do
     erb(:page4)
   else
     @error = true
+    if answer1 == "6"
+      @error_b = true
+    elsif ((answer2 == "push") | (answer2 == "push()")) && ((answer3 == "join") | (answer3 == "join()"))
+      @error_a = true
+    end
+
     erb(:page3)
   end
 end
@@ -84,6 +100,11 @@ post('/page4') do
     erb(:page5)
   else
     @error = true
+    if answer1 == "find"
+      @error_b = true
+    elsif answer2 == "total_potions"
+      @error_a = true
+    end
     erb(:page4)
   end
 end
@@ -101,6 +122,11 @@ post('/page5') do
     erb(:page6)
   else
     @error = true
+    if answer1 == "params"
+      @error_b = true
+    elsif answer2 == "key_id"
+      @error_a = true
+    end
     erb(:page5)
   end
 end
@@ -125,6 +151,11 @@ post('/page7') do
     erb(:page8)
   else
     @error = true
+    if answer2 == "end"
+      @error_a = true
+    elsif ((answer1 == 'upcase') | (answer1 == 'upcase()') | (answer1 == 'upcase!') | (answer1 == 'upcase!()'))
+      @error_b = true
+    end
     erb(:page7)
   end
 end
@@ -141,6 +172,11 @@ post('/page8') do
     erb(:page9)
   else
     @error = true
+    if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()"))
+      @error_a = true
+    elsif answer3 == "part"
+      @error_b = true
+    end
     erb(:page8)
   end
 end
@@ -221,6 +257,11 @@ post('/page13') do
     erb(:page14)
   else
     @error = true
+    if ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
+      @error_a = true
+    elsif answer1 > 5
+      @error_b = true
+    end
     erb(:page13)
   end
 end

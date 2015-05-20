@@ -1,7 +1,13 @@
 <% if @error == true %>
-  <p>That sting and array looks like it may come in handy. I wonder what you can do with it.</p>
+  <p>That string and array looks like it may come in handy. I wonder what you can do with it.</p>
+<% end %>
 
-<% else %>
+<% if @error_a == true %>
+<p>Your 'number of hits' is wrong. Try again.</p>
+<% elsif @error_b == true %>
+<p>One or more of your 'methods' is wrong. Try again.</p>
+<% end %>
+
 <h1>The key has been added to your inventory</h1>
 <hr>
 <h3>Inventory</h3>
@@ -10,7 +16,8 @@
     <li><%= item.description %> </li>
   </ul>
 <% end %><hr>
-<% end %>
+
+
 
 <h3>Continuing on your path through the cave you come to a large open wooden door. As you walk through the entrance, the door suddenly slams closed behind you. You attempt to open the door to no avail. Looking around to the front you notice a metal ring anchored to the cave walls with a pile of pieces of "string". As you keep exploring the area you notice a large drop off to the cave floor below. You think you can just make out a number of doors at the bottom. </h3>
 
@@ -22,16 +29,16 @@
   def make_rope<br>
   rope_array = [] <br>
 <form action='/page3' method='post'>
-  <input id='first_spot' name='first_spot' type='text'>
+  <input id='first_spot' name='first_spot' type='text' placeholder='number of hits' required>
   <label for='first_spot'>.times do</label>
   <br>
   <label for='second_spot'>rope_array.</label>
-  <input id='second_spot' name='second_spot' type='text'>
+  <input id='second_spot' name='second_spot' type='text' placeholder='method' required>
   ('string') <br>
   end
   <br>
   <label for='third_spot'>rope = rope_array.</label>
-  <input id='third_spot' name='third_spot' type='text'>
+  <input id='third_spot' name='third_spot' type='text' placeholder='method' required>
   <br>end</h4>
   <button type='submit'>Create Rope</button>
 </form>

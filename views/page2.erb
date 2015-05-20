@@ -10,16 +10,31 @@
 *This key might be useful later so perhaps you should add it to your inventory. But wait! There seems to be a problem with your bag! When you place the key inside it disappears. You need to find a way to save your key with the rest of your belongings.* You have the beginning of an idea, but its not quite complete. See if you can remember what you were thinking. </h3>
 <% end %>
 
+<% if @error_a == true %>
+<p>Your 'class method' answer is wrong. Try again.</p>
+<% elsif @error_b == true %>
+<p>Your 'instance method' is wrong. Try again.</p>
+<% end %>
+
+<hr>
+<h3>Inventory</h3>
+<% Item.all.each do |item| %>
+<ul>
+  <li><%= item.description %> </li>
+</ul>
+<% end %><hr>
+
+
 <h4>def add_item_to_inventory<br>
 
 <form action='/page2' method='post'>
 <div class='form-group'>
   <label for='first_spot'>new_item = Item.</label>
-  <input id='first_spot' name='first_spot' type='text' placeholder='enter class method' required>
+  <input id='first_spot' name='first_spot' type='text' placeholder='class method' required>
   ({:description => 'key'})
   <br>
   <label for='second_spot'>new_item.</label>
-  <input id='second_spot' name='second_spot' type='text' placeholder='enter method' required>
+  <input id='second_spot' name='second_spot' type='text' placeholder='instance method' required>
   <br>end</h4>
 </div>
   <button type='submit'>Add to Inventory</button>

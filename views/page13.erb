@@ -9,14 +9,20 @@
   <p>Hint: the monster is a string</p>
 <% end %>
 
+<% if @error_a == true %>
+<p>You haven't hit the monster enough times! Try again.</p>
+<% elsif @error_b == true %>
+<p>Your method is wrong. Try again.</p>
+<% end %>
+
 <p>def kill_monster</p>
 <form action='/page13' method='post'>
   <div class='form-group'>
-    <input id='answer1' name='answer1' type='text' placeholder='enter number of hits' autocomplete='off' required>
+    <input id='answer1' name='answer1' type='text' placeholder='number of hits' autocomplete='off' required>
     .times() do
     <br>
     <label for='answer2'>self.</label>
-    <input id='answer2' name='answer2' type='text' placeholder='enter method' autocomplete='off' required>
+    <input id='answer2' name='answer2' type='text' placeholder='method' autocomplete='off' required>
   </div>
   <p>end</p>
 

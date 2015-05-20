@@ -11,6 +11,13 @@
 <br>
 
 <h4>
+
+<% if @error_a == true %>
+<p>Your 'method' is wrong. Try again.</p>
+<% elsif @error_b == true %>
+<p>You didn't finish it right. Try again.</p>
+<% end %>
+
 def startle_goblin<br>
   phrase = "i'm gonna git you goblin!"<br>
 
