@@ -1,29 +1,37 @@
+<% if @error == true %>
+<p>You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last!</p>
+
+<% else %>
+
 <h1>You yell: "I'M GONNA GIT YOU GOBLIN!"</h1>
 
 <h3>The goblin momentarily loses all confidence in himself and stops his charge.  You need to pick a weapon to quckly dispatch the goblin before he ragains his former courage.  The only way to truly kill a goblin is to remove all his limbs and then his head.</h3>
 
+<% end %>
 #dropdown select for sword
 
 <h4>
 def dismember<br>
 goblin_array = ["left_leg", "right_leg", "left_arm", "right_arm", "head" ]<br>
-goblin_array.XXXXXX do |part|<br>
-  goblin_array.XXXXXX(XXXXXX)<br>
-end<br>
-goblin_array<br>
-end<br>
-</h4>
 
-<h4>And that's what it's all about!</h4>
-<form action='/page9'>
-  <label for='first_spot'>Answer for the first missing piece</label>
-  <input id='first_spot' name='first_spot' type='text'>
+
+<form action='/page8' method='post'>
+  goblin_array.
+  <input id='first_spot' name='first_spot' type='text' placeholder='for all limbs' required>
+  <label for='first_spot'> do |part|</label>
+
   <br>
-  <label for='second_spot'>Answer for the second missing piece</label>
-  <input id='second_spot' name='second_spot' type='text'>
+  <label for='second_spot'>goblin_array.</label>
+  <input id='second_spot' name='second_spot' type='text' placeholder='remove from array' required>
+  <label for='third_spot'>(</label>
+  <input id='third_spot' name='third_spot' type='text' placeholder='each limb'>)
   <br>
-  <label for='third_spot'>Answer for the second missing piece</label>
-  <input id='third_spot' name='third_spot' type='text'>
+  end
   <br>
+  goblin_array
+  <br>
+  end
+  <br>
+  And that's what it's all about!</h4>
   <button type='submit'>Slice and Dice</button>
 </form>

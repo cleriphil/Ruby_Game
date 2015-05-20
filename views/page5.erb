@@ -1,22 +1,22 @@
+<% if @error == true %>
+<p>You need to use the markings on the key as a way to <em>identify</em> the door the key belongs to.</p>
+<% else %>
 <h1>Wow, that feels better.</h1>
 </h3>You stand up, the potion the king gave you worked like a charm and you feel good as new. Now that the tears have stopped you see before you three doors, each with unique markings above them.  The writing is some ancient and evil text, unintelligible to you.  You try the first door, it is locked.  You try the second and third, they are locked too.</h3>
 <br>
+<% end %>
 <h3>Could you somehow use the key you found to open one of the doors?  There are markings on the key but the writing is too foreign for you to understand... we could call the markings the keys id...</h3>
 
 <h4>What if...<br>
   def pick_the_right_door<br>
-    key_id = XXXXXX.fetch("markings_from_key").to_i()<br>
-    right_door = Door.find(XXXXXX)<br>
-  end<br>
-
-
-</h4>
-<form action='/page6'>
-  <label for='first_spot'>Answer for the first missing piece</label>
-  <input id='first_spot' name='first_spot' type='text'>
+<form action='/page5' method="post">
+  key_id =
+  <input id='first_spot' name='first_spot' type='text' placeholder='enter command' required>
+  <label for='first_spot'>.fetch("markings_from_key").to_i()</label><br>
+  <label for='second_spot'>right_door = Door.find(</label>
+  <input id='second_spot' name='second_spot' type='text' placeholder='which key?' required>
+  )
   <br>
-  <label for='second_spot'>Answer for the second missing piece</label>
-  <input id='second_spot' name='second_spot' type='text'>
-  <br>
+  end</h4>
   <button type='submit'>Pick Right Door</button>
 </form>

@@ -1,23 +1,28 @@
 <h1>The minstrel doesn't know this ditty. </h1>
 
 # add an image tag here
+<% if @error == true %>
+<p>The path is still unclear, try entering in the proper routing again to complete the server request for the cave_entrance page</p>
 
+<% else %>
 <h3>Oops, seems like there was an error in loading the quest. Why don't you try to manually set your path </h3>
-
+<% end %>
 <hr>
 
 <h3>Try filling in the gaps:<br>
-  <u>XXXXXX</u> '/cave_entrance' do<br>
-    erb(:<u>XXXXXX</u>)<br>
-  end
-</h3>
 
-<form action='/page2'>
-  <label for='first_spot'>Answer for the first missing piece</label>
-  <input id='first_spot' name='first_spot' type='text'>
-  <br>
-  <label for='second_spot'>Answer for the second missing piece</label>
-  <input id='second_spot' name='second_spot' type='text'>
-  <br>
+
+<form action='/page1' method = "post">
+  <h4><div class="form-group">
+
+    <input id='first_spot' name='first_spot' type='text' placeholder = 'server request' required>
+    <label for='first_spot'>'/cave_entrance' do<br></label>
+    erb(:
+    <input id='second_spot' name='second_spot' type='text' placeholder = "erb file name" required>)
+    <label for='second_spot'></label><br>
+    end</h4>
+  </div>
   <button type='submit'>Find the path</button>
 </form>
+
+</h3>

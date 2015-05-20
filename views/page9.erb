@@ -1,9 +1,10 @@
-<% if @error == false %>
-  <p>The goblin's dead.</p>
-  <p>You walk through the passage and come in contact with cockroaches!</p>
-  <p></p>
+<% if @error == true %>
+<p>Oh no! The cockroaches are multiplying.</p>
+
 <% else %>
-  <p>Oh no! The cockroaches are multiplying.</p>
+<p>The goblin's dead.</p>
+<p>You walk through the passage and come in contact with cockroaches!</p>
+
 <% end %>
 
 <form action='/page9' method='post'>
