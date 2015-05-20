@@ -1,14 +1,19 @@
+<% if @error == true %>
+<p>That was not the right door, the key does not work. We get it, reading is tough, especially reading evil markings.  Try another door.</p>
+
+<% else %>
 <h1>You think you know which door is the right door!</h1>
 <h3>You think that the correct door is door number 2. Why dont you give it a try! </h3>
+<% end %>
 <hr>
 
-<form action='/page6error'>
+<form action='/page6' method='post'>
   <button type='submit'>Door 1</button>
 </form>
 <form action='/page7'>
   <button type='submit'>Door 2</button>
 </form>
-<form action='/page6error'>
+<form action='/page6' method='post'>
   <button type='submit'>Door 3</button>
 </form>
 
