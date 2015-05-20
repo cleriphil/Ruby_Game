@@ -1,6 +1,10 @@
 <% if @error == true %>
 <p>You need to use the markings on the key as a way to <em>identify</em> the door the key belongs to.</p>
-<% else %>
+<% end %>
+<% if @error_a == true %>
+<p>Your 'request' is wrong. Try again.</p>
+<% elsif @error_b == true %>
+<p>Your 'key' is wrong. Try again.</p>
 <% end %>
 <h1>Wow, that feels better.</h1>
 <hr>
@@ -10,14 +14,16 @@
 <h3>Could you somehow compare the markings on the key to the markings on the door to figure out what door the key goes to?</h3>
 <br>
 
+
+
 <h4>What if...<br>
   def pick_the_right_door<br>
 <form action='/page5' method="post">
   key_id =
-  <input id='first_spot' name='first_spot' type='text' placeholder='enter command' required>
-  <label for='first_spot'>.fetch("markings_from_key").to_i( )</label><br>
+  <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='request' required>
+  <label for='first_spot'>.fetch("markings_from_key").to_i()</label><br>
   <label for='second_spot'>right_door = Door.find(</label>
-  <input id='second_spot' name='second_spot' type='text' placeholder='which key?' required>
+  <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='which key?' required>
   )
   <br>
   end</h4>

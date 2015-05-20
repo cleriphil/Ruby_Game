@@ -1,7 +1,11 @@
 <% if @error == true %>
 <p>Thats not nearly loud enough to scare a goblin, even if he is already a little jumpy.  Try again but make it <em>LOUD</em></p>
+<% end %>
 
-<% else %>
+<% if @error_a == true %>
+<p>Your method is wrong. Try again.</p>
+<% elsif @error_b == true %>
+<p>You didn't finish it right. Try again.</p>
 <% end %>
 
 <h1>The lock springs open and you go through the door...</h1>
@@ -13,16 +17,19 @@
 <br>
 
 <h4>
+
+
+
 def startle_goblin<br>
   phrase = "i'm gonna git you goblin!"<br>
 
 
 <form action='/page7' method='post'>
   <label for='first_spot'>yelled_phrase = phrase.</label>
-  <input id='first_spot' name='first_spot' type='text' placeholder='make it loud!' required>
+  <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='make it loud!' required>
   <br>
   <label for='second_spot'></label>
-  <input id='second_spot' name='second_spot' type='text' placeholder='finish it' required>
+  <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='finish it' required>
 </h4><br>
   <button type='submit'>Yell Out Loud</button>
 </form>

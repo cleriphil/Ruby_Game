@@ -1,12 +1,17 @@
 <% if @error == true %>
 <p>The path is still unclear, try entering in the proper routing again to complete the server request for the cave_entrance page</p>
-
-<% else %>
 <% end %>
+<% if @error_a == true %>
+  <p>Your 'server request' answer is wrong. Try again.</p>
+<% elsif @error_b == true %>
+  <p>Your 'erb file name' is wrong. Try again.</p>
+<% end %>
+
 
 <h1>The minstrel doesn't know this ditty. </h1>
 <h3>Oops, seems like there was an error in loading the quest. Why don't you try to manually set your path </h3>
 <hr>
+
 
 <h3>Try filling in the gaps:<br>
 
@@ -14,10 +19,10 @@
 <form action='/page1' method = "post">
   <h4><div class="form-group">
 
-    <input id='first_spot' name='first_spot' type='text' placeholder = 'server request' required>
+    <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder = 'server request' required>
     <label for='first_spot'>'/cave_entrance' do</label><br>
     erb(:
-    <input id='second_spot' name='second_spot' type='text' placeholder = "erb file name" required>)
+    <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder = "erb file name" required>)
     <label for='second_spot'></label><br>
     end</h4>
   </div>
