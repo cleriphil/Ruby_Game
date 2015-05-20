@@ -21,25 +21,47 @@ get('/page1') do
   erb(:page1)
 end
 
-get('/page2') do
+post('/page1') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "get" && answer2 == "cave_entrance"
     key = Item.create({:description => "Key"})
     erb(:page2)
   else
-    erb(:error)
+    @error = true
+    erb(:page1)
   end
 end
 
-get('/page3') do
+get('/page2') do
+  erb(:page2)
+end
+
+post('/page2') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "new" && answer2 == "save"
     @items = Item.all()
     erb(:page3)
   else
-    erb(:error)
+    @error = true
+    erb(:page2)
+  end
+end
+
+get('/page3') do
+  erb(:page3)
+end
+
+post('/page3') do
+  answer1 = params.fetch('first_spot')
+  answer2 = params.fetch('second_spot')
+  if answer1 == "new" && answer2 == "save"
+    erb(:page4)
+  else
+    @error = true
+    @items = Item.all()
+    erb(:page3)
   end
 end
 
