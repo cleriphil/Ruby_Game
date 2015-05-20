@@ -72,11 +72,12 @@ get('/page4') do
 end
 
 post('/page4') do
-  rope = Item.create({:description => "Rope"})
   @items = Item.all()
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "find" && answer2 == "total_potions"
+    found_item = Item.find_by_description(Potion)
+    found_item.delete
     erb(:page5)
   else
     @error = true
