@@ -1,9 +1,12 @@
 require('bundler/setup')
 Bundler.require(:default, :production)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
-
+require('pry')
 
 get('/') do
+  Item.all.each() do |item|
+    item.destroy
+  end
   erb(:index)
 end
 
@@ -260,6 +263,8 @@ patch('/page12') do
   if answer == "update"
     item = Item.find_by_description('Sword')
     item.update({:description => 'Enchanted Sword'})
+    @monster = Enemy.create({:name => "Niliathan"})
+    @monster = @monster.name
     @error = false
     erb(:page13)
   else
@@ -269,23 +274,27 @@ patch('/page12') do
 end
 
 get('/page13') do
+  @monster = Enemy.all.first.name
   erb(:page13)
 end
 
 post('/page13') do
   answer1 = params.fetch('answer1').to_i
   answer2 = params.fetch('answer2')
-  if (answer1 > 5) & ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
-    Item.all.each() do |item|
-      item.destroy
-    end
+  if (answer1 == 6) && ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
     erb(:page14)
   else
     @error = true
-    if ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
+    if (answer1 < 6) && ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
+      @monster = Enemy.all.first
+      @monster = @monster.chop_number_of_times(answer1)
       @error_a = true
-    elsif answer1 > 5
+      if @monster.length == 3
+        erb(:page14)
+      end
+    elsif (answer1 > 6) && ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
       @error_b = true
+    else
     end
     erb(:page13)
   end
