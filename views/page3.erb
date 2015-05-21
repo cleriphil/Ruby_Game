@@ -27,19 +27,22 @@
 <h3>It looks like six pieces of "string" tied or <em>joined</em> together to form a rope could reach the bottom... Look at this! There is an empty array in the corner...hmm I wonder...</h3>
 
 <h4> Lets try this, </h4>
-  <p>def make_rope<br>
-  &emsp;rope_array = [ ] <br>
-<form action='/page3' method='post'>
-  &emsp;<input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='number of hits' required>
-  <label for='first_spot'>.times do</label>
-  <br>
-  <label for='second_spot'>&emsp;&emsp;&emsp;rope_array.</label>
-  <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='method' required>
-  ('string') <br>
-  &emsp;end
-  <br>
-  <label for='third_spot'>&emsp;rope = rope_array.</label>
-  <input id='third_spot' name='third_spot' type='text' autocomplete='off' placeholder='method' required>
-  <br>end</p>
-  <button type='submit'>Create Rope</button>
-</form>
+
+<div class='code_block'>
+    <p>def make_rope<br>
+    &emsp;rope_array = [ ] <br>
+    <form action='/page3' method='post'>
+      &emsp;<input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='number of hits' required>
+      .times do
+      <br>
+      &emsp;&emsp;&emsp;rope_array.
+      <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='method' required>
+      ('string') <br>
+      &emsp;end
+      <br>
+      &emsp;rope = rope_array.
+      <input id='third_spot' name='third_spot' type='text' autocomplete='off' placeholder='method' required>
+      <br>end</p>
+    <button class='btn btn-default'>Create Rope</button>
+  </form>
+</div>

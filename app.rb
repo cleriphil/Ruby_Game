@@ -7,12 +7,15 @@ get('/') do
   Item.all.each() do |item|
     item.destroy
   end
+  Enemy.all.each() do |enemy|
+    enemy.destroy
+  end
   erb(:index)
 end
 
 get('/page0') do
-  sword = Item.create({:description => "Sword"})
   snack = Item.create({:description => "Snack"})
+  sword = Item.create({:description => "Sword"})
   ipod = Item.create({:description => "iPod"})
   potion = Item.create({:description => "Potion"})
   torch = Item.create({:description => "Torch"})
@@ -168,7 +171,6 @@ post('/page8') do
   item = Item.find(item_id)
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
-  answer3 = params.fetch('third_spot')
   if item.description == 'Torch'
     @error = 1
     erb(:page8)
@@ -185,15 +187,10 @@ post('/page8') do
     @error = 5
     erb(:page8)
   else # sword is chosen
-    if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()")) && answer3 == "part"
+    if ((answer1 == "times") | (answer1 == "times()")) && ((answer2 == "shift") | (answer2 == "shift()"))
       erb(:page9)
     else
       @error = true
-      if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()"))
-        @error_a = true
-      elsif answer3 == "part"
-        @error_b = true
-      end
       erb(:page8)
     end
   end
@@ -286,12 +283,7 @@ post('/page13') do
     @monster = Enemy.all.first
     @monster = @monster.chop_number_of_times(answer1)
     if @monster.name.length == 3
-      Item.all.each() do |item|
-        item.destroy
-      end
-      Enemy.all.each() do |enemy|
-        enemy.destroy
-      end
+
       erb(:page14)
     elsif @monster.name.length > 3
       @over3error = true

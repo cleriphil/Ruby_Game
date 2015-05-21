@@ -19,14 +19,9 @@
   <% end %>
 
 <% if @error == true %>
-<h4><p>Well, you chose the right item, but that's not good enough! You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last!</p>
+<h4><p>Well, you chose the right item, but that's not good enough! You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last! <br>One or more of your methods is wrong.</p>
 <% end %>
 
-<% if @error_a == true %>
-<p>Your argument is wrong. Try again.</p>
-<% elsif @error_b == true %>
-<p>One or more of your methods is wrong. Try again.</p></h4>
-<% end %>
 <hr>
 </h4>
 </div>
@@ -37,36 +32,35 @@
 
 <h3>The goblin CRUD momentarily loses all confidence in himself and stops his charge.  You need to pick a weapon to quckly dispatch the goblin before he ragains his former courage.  The only way to truly kill a goblin is to remove all his limbs one by one and then his head.</h3>
 
-<form action='/page8' method='post'>
 
-<h4>
+<form action='/page8' method='post'>
   <label for='item'>What item should you use to slay CRUD?</label>
   <select id='item' name='item' type='text'>
     <% Item.all.each do |item| %>
       <option value='<%= item.id %>'><%= item.description %></option>
     <% end %>
   </select><br><br>
+<div class='code_block'>
   def dismember<br>
-  goblin_array = ["left_leg", "right_leg", "left_arm", "right_arm", "head" ]<br>
-  goblin_array.
-  <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='for all limbs' required>
-  <label for='first_spot'> do |part|</label>
+  &emsp;goblin_array = ["left_leg", "right_leg", "left_arm", "right_arm", "head" ]<br>
+  &emsp;goblin_array.length.
+  <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='method' required>
+  do
   <br>
-  <label for='second_spot'>goblin_array.</label>
-  <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='remove from array' required>
-  <label for='third_spot'>(</label>
-  <input id='third_spot' name='third_spot' type='text' autocomplete='off' placeholder='each limb'>)
+  &emsp;&emsp;goblin_array.
+  <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='method' required>
+<br>
+  &emsp;end
   <br>
-  end
-  <br>
-  goblin_array
+  &emsp;goblin_array
   <br>
   end
   <br>
   <br>
   CRUD.dismember
+</div>
   <br>
   <br>
-  And that's what it's all about!</h4>
+  And that's what it's all about!<br>
   <button type='submit'>Slice and Dice</button>
 </form>
