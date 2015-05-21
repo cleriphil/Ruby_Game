@@ -37,9 +37,9 @@
 
 <form action='/page8' method='post'>
   <label for='item'>What item should you use to slay CRUD?</label>
-  <select id='item' name='item' type='text'>
+  <select class='placeholder' id='item' name='item' type='text'>
     <% Item.all.each do |item| %>
-      <option value='<%= item.id %>'><%= item.description %></option>
+      <option  value='<%= item.id %>'><%= item.description %></option>
     <% end %>
   </select><br><br>
 </div>
@@ -47,11 +47,11 @@
   def dismember<br>
   &emsp;goblin_array = ["left_leg", "right_leg", "left_arm", "right_arm", "head" ]<br>
   &emsp;goblin_array.length.
-  <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='method' required>
+  <input id='first_spot' name='first_spot' type='text' autocomplete='off' class='placeholder' placeholder='method' required>
   do
   <br>
   &emsp;&emsp;goblin_array.
-  <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='method' required>
+  <input id='second_spot' name='second_spot' type='text' autocomplete='off' class='placeholder' placeholder='method' required>
 <br>
   &emsp;end
   <br>

@@ -10,12 +10,18 @@ body {
 }
 
 img {
-  opacity: 0.8;
-  border-radius: 80px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
 
+img .bug {
+  display: inline;
+}
+
+.ruby {
+  opacity: 0.8;
+  border-radius: 80px;
 }
 
 .title {
@@ -62,4 +68,10 @@ img {
 body hr {
   height: 5px;
 
+}
+
+.placeholder {
+  color: #4C934C;
+  font-family: 'Source Code Pro', cursive;
+  font-size: 15px;
 }
