@@ -1,33 +1,54 @@
+<div>
+  <% if @error == 1 %>
+  <p>Your Torch would only serve to better illuminate your form and make it easier for CRUD to bite you.</p>
+
+  <% elsif @error == 2 %>
+  <p>That was a good idea, the music did seem to soothe them a bit but they quickly remembered their goal, to eat you.</p>
+
+  <% elsif @error == 3 %>
+  <p>You should probably hold keep that snack for later...</p>
+
+  <% elsif @error == 4 %>
+  <p>It does not seem like a rope would be a very good option for fending off cockroaches...</p>
+
+  <% elsif @error == 5 %>
+  <p>Hmmm... a key to fight off a horde of large cockroaches... I don't know... I guess you could try but...</p>
+
+  <% else %>
+  <% end %>
+
 <% if @error == true %>
-<p>Not good enough! You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last!</p>
+<h4><p>Not good enough! You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last!</p>
 <% end %>
 
 <% if @error_a == true %>
 <p>Your argument is wrong. Try again.</p>
 <% elsif @error_b == true %>
-<p>One or more of your methods is wrong. Try again.</p>
+<p>One or more of your methods is wrong. Try again.</p></h4>
 <% end %>
+<hr>
+</div>
 
 <h1>You yell: "I'M GONNA GIT YOU GOBLIN!"</h1>
 
 <hr>
 
-<h3>The goblin momentarily loses all confidence in himself and stops his charge.  You need to pick a weapon to quckly dispatch the goblin before he ragains his former courage.  The only way to truly kill a goblin is to remove all his limbs and then his head.</h3>
-
-
-
-#dropdown select for sword
-
-<h4>
-def dismember<br>
-goblin_array = ["left_leg", "right_leg", "left_arm", "right_arm", "head" ]<br>
-
+<h3>The goblin CRUD momentarily loses all confidence in himself and stops his charge.  You need to pick a weapon to quckly dispatch the goblin before he ragains his former courage.  The only way to truly kill a goblin is to remove all his limbs one by one and then his head.</h3>
 
 <form action='/page8' method='post'>
+
+<h4>
+  <label for='item'>What item should you use to slay CRUD?</label>
+  <select id='item' name='item' type='text'>
+    <% Item.all.each do |item| %>
+      <option value='<%= item.id %>'><%= item.description %></option>
+    <% end %>
+  </select><br><br>
+  def dismember<br>
+  goblin_array = ["left_leg", "right_leg", "left_arm", "right_arm", "head" ]<br>
   goblin_array.
   <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='for all limbs' required>
   <label for='first_spot'> do |part|</label>
-
   <br>
   <label for='second_spot'>goblin_array.</label>
   <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='remove from array' required>
@@ -39,6 +60,9 @@ goblin_array = ["left_leg", "right_leg", "left_arm", "right_arm", "head" ]<br>
   goblin_array
   <br>
   end
+  <br>
+  <br>
+  CRUD.dismember
   <br>
   <br>
   And that's what it's all about!</h4>

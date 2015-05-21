@@ -1,12 +1,17 @@
-<% if @error == true %>
+<div>
+<h4>
+  <% if @error == true %>
   <p>Maybe you could put enough "string" to reach the bottom into a line (use that rope_array over there?) and connect them somehow...</p>
 <% end %>
 
 <% if @error_a == true %>
-<p>Your 'number of hits' is wrong. Try again.</p>
+  <p>Your 'number of hits' is wrong. Try again.</p>
 <% elsif @error_b == true %>
-<p>One or more of your 'methods' is wrong. Try again.</p>
+  <p>One or more of your 'methods' is wrong. Try again.</p>
 <% end %>
+<hr>
+<h4>
+</div>
 
 <h1>The key has been added to your inventory</h1>
 <hr>
@@ -17,9 +22,9 @@
   </ul>
 <% end %><hr>
 
-<h3>Continuing on your path through the cave you come to a large open wooden door. As you walk through the entrance, the door suddenly slams closed behind you. You attempt to open the door to no avail. Looking around to the front you notice a metal ring anchored to the cave walls with a pile of pieces of "string". As you keep exploring the area you notice a large drop off to the cave floor below. You think you can just make out a number of doors at the bottom. </h3>
+<h3>Continuing on your path through the cave you come to a large unlocked wooden door. As you walk through the door, it suddenly slams closed behind you. You attempt to open the door to no avail. Looking around, you notice a metal ring anchored to the cave walls with a pile of pieces of "string". As you keep exploring the area you notice a large drop off to the cave floor below. You think you can just make out a number of doors at the bottom. </h3>
 
-<h4>It looks like six pieces of "string" tied or <em>joined</em> together to form a rope could reach the bottom... Look at this! There is an empty array in the corner...hmm I wonder...</h4>
+<h3>It looks like six pieces of "string" tied or <em>joined</em> together to form a rope could reach the bottom... Look at this! There is an empty array in the corner...hmm I wonder...</h3>
 
 <h4> Lets try this, </h4>
   <p>def make_rope<br>

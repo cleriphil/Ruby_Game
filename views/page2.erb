@@ -1,17 +1,23 @@
+<div>
 <% if @error == true %>
-<p>Apparently you had some trouble putting the key into your inventory. Try again, but this time make a place for the key first and then keep it there.</p>
+  <h4><p>Apparently you had some trouble putting the key into your inventory. Try again, but this time make a place for the key first and then keep it there.</p>
 <% end %>
+
 <% if @error_a == true %>
-<p>Your 'class method' answer is wrong. Try again.</p>
+  <p>Your 'class method' answer is wrong. Try again.</p>
 <% elsif @error_b == true %>
-<p>Your 'instance method' is wrong. Try again.</p>
+  <p>Your 'instance method' is wrong. Try again.</p></h4>
 <% end %>
+<hr>
+</div>
+
+
 <h1>The path is now clear!</h1>
 <hr>
 
-<h3>You are now at the beginning of the cave entrance. You notice in a pile of rubble a small glimmer. As you walk over to the rocks, you notice it is a small key partially burried under the rocks and dirt. Using your sword you dig out the key.
+<h3>You are now at the entrance of a large cave system. You notice in a pile of rubble a small glimmer. As you walk over to the rocks, you notice it is a small key partially burried under the rocks and dirt. Using your sword you dig out the key.
 
-*This key might be useful later so perhaps you should add it to your inventory. But wait! There seems to be a problem with your bag! When you place the key inside it disappears. You need to find a way to save your key with the rest of your belongings.* You have the beginning of an idea, but its not quite complete. See if you can remember what you were thinking. </h3>
+This key might be useful later so perhaps you should add it to your inventory. But wait! There seems to be a problem with your bag! When you place the key inside it disappears. You need to find a way to save your key with the rest of your belongings. You have the beginning of an idea, but its not quite complete. See if you can remember what you were thinking. </h3>
 
 
 
@@ -40,5 +46,4 @@
   </div>
     <button type='submit'>Add to Inventory</button>
   </form>
-
 </div>

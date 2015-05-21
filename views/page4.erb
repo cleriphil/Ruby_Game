@@ -1,3 +1,5 @@
+<div>
+<h4>
 <% if @error == true %>
 <p>In order to fix your boo boo you need to <em>find</em> the right item. A consumable item should disappear once you use it.</p>
 <% end %>
@@ -6,7 +8,10 @@
 <% elsif @error_b == true %>
 <p>Your 'object' is wrong. Try again.</p>
 <% end %>
-<p>
+</h4>
+<hr>
+</div>
+
 <h1>Great work! Now you created a rope!</h1>
 
 <hr>
@@ -18,13 +23,10 @@
 <% end %>
 <hr>
 
-
-
 <h3>You now use your new rope to start rappelling down from the ledge to the cave floor below. Before you reach the bottom, your rope suddenly snaps. Did you really think six pieces of string would hold your weight?</h3>
 
-<hr>
-
-<h4>You scraped your knee on the way down. You begin to cry but remember you have a potion in your bag that you can use to heal your wound. After you find your potion and use it, it will be gone.</h4>
+<h3>You scraped your knee on the way down. You begin to cry but remember you have a potion in your bag that you can use to heal your wound. After you find your potion and use it, it will be gone.</h3>
+<br>
 
 <h4>Try this: <br>
   def fix_boo_boo <br>
@@ -37,7 +39,7 @@
   if potion.drink <br>
   <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='object' required>
   <label for='second_spot'>-= 1      # you just drank your only potion right </label><br>
-  end <br>
+  end <br><br>
   knee.fix_boo_boo
   <br></h4>
   <button type='submit'>Fix Your Boo Boo</button>
