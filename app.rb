@@ -28,7 +28,6 @@ post('/page1') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "get" && answer2 == "cave_entrance"
-    key = Item.create({:description => "Key"})
     erb(:page2)
   else
     @error = true
@@ -46,6 +45,7 @@ get('/page2') do
 end
 
 post('/page2') do
+  key = Item.create({:description => "Key"})
   @items = Item.all()
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
@@ -168,19 +168,38 @@ get('/page8') do
 end
 
 post('/page8') do
+  item_id = para,s.fetch('item')
+  item = Item.find(item_id)
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   answer3 = params.fetch('third_spot')
-  if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()")) && answer3 == "part"
+  if item.description == 'Torch'
+    @error = 1
     erb(:page9)
-  else
-    @error = true
-    if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()"))
-      @error_a = true
-    elsif answer3 == "part"
-      @error_b = true
+  elsif item.description == 'iPod'
+    @error = 2
+    erb(:page9)
+  elsif item.description == 'Snack'
+    @error = 3
+    erb(:page9)
+  elsif item.description == 'Rope'
+    @error = 4
+    erb(:page9)
+  elsif item.description == 'Key'
+    @error = 5
+    erb(:page9)
+  else # sword is chosen
+    if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()")) && answer3 == "part"
+      erb(:page9)
+    else
+      @error = true
+      if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()"))
+        @error_a = true
+      elsif answer3 == "part"
+        @error_b = true
+      end
+      erb(:page8)
     end
-    erb(:page8)
   end
 end
 
