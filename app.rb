@@ -122,8 +122,6 @@ post('/page5') do
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
   if answer1 == "params" && answer2 == "key_id"
-    # found_item = Item.find(params.fetch('4').to_i())
-    # found_item.delete
     erb(:page6)
   else
     @error = true
@@ -209,17 +207,6 @@ get('/page9') do
   erb(:page9)
 end
 
-# post('/page9') do     #this is what it was before
-#   item_id = params.fetch('item')
-#   item = Item.find(item_id)
-#   if item.description == 'Torch'
-#     erb(:page10)
-#   else
-#     @error = true
-#     erb(:page9)
-#   end
-# end
-
 post('/page9') do
   item_id = params.fetch('item')
   item = Item.find(item_id)
@@ -283,7 +270,6 @@ patch('/page12') do
     item = Item.find_by_description('Sword')
     item.update({:description => 'Enchanted Sword'})
     @monster = Enemy.create({:name => "Niliathan"})
-    @monster = @monster.name
     @error = false
     erb(:page13)
   else
@@ -293,28 +279,35 @@ patch('/page12') do
 end
 
 get('/page13') do
-  @monster = Enemy.all.first.name
+  @monster = Enemy.all.first
   erb(:page13)
 end
 
 post('/page13') do
   answer1 = params.fetch('answer1').to_i
   answer2 = params.fetch('answer2')
-  if (answer1 == 6) && ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
-    erb(:page14)
-  else
-    @error = true
-    if (answer1 < 6) && ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
-      @monster = Enemy.all.first
-      @monster = @monster.chop_number_of_times(answer1)
-      @error_a = true
-      if @monster.length == 3
-        erb(:page14)
+  if (answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()')
+    @monster = Enemy.all.first
+    @monster = @monster.chop_number_of_times(answer1)
+    if @monster.name.length == 3
+      Item.all.each() do |item|
+        item.destroy
       end
-    elsif (answer1 > 6) && ((answer2 =='chop') | (answer2 == 'chop()') | (answer2 == 'chop!') | (answer2 == 'chop!()'))
-      @error_b = true
+      Enemy.all.each() do |enemy|
+        enemy.destroy
+      end
+      erb(:page14)
+    elsif @monster.name.length > 3
+      @over3error = true
+      erb(:page13)
     else
+      @under3error = true
+      @monster.update({:name => "Niliathan"})
+      erb(:page13)
     end
+  else
+    @choperror = true
+    @monster = Enemy.all.first
     erb(:page13)
   end
 end

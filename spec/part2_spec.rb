@@ -8,7 +8,7 @@ describe('the path of the cockroaches enemy page', {:type => :feature}) do
     visit('/page9')
     select('Torch')
     click_button('submit')
-    expect(page).to have_content('Break time')
+    expect(page).to have_content('scurry')
   end
 end
 
@@ -19,6 +19,6 @@ describe('the path of the cockroaches enemy page', {:type => :feature}) do
     visit('/page9')
     select('sword')
     click_button('submit')
-    expect(page).to have_content('Oh no!')
+    expect(page).to have_content('a key')
   end
 end
