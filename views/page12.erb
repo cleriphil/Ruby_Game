@@ -1,11 +1,16 @@
+<div>
+  <h4>
 <% if @error == true %>
-  <p>The enchantment didn't work. Try again. Here's a clue: </p>
-  <p>We're changing the properties of the sword. Make sure everything is up to date.</p>
+  <p>The enchantment didn't work. Try again. Here's a clue: We're changing the properties of the sword. Make sure everything is up to date.</p>
 <% end %>
-<h1>Your stop_spell method works!</h1>
 <hr>
-<h3>When the wizard returns he is furious. He shouts "Who dares shuffles my script? No matter, the monster behind the door is perfectly capable of defending the ruby. He will .destory anything or anyone in his path." As the wizard turns to leave you notice he accidently drops a small pouch. You run over to investigate what it was and see that it is enchantment powder. You could probably use it on your sword for the battle that lies ahead. </h3>
+</h4>
+</div>
 
+<h1>You shuffled his script pages around and now Daemon is confused!</h1>
+<hr>
+<h3>He can no longer maintain the barrier around the door. When the wizard returns he is furious. He shouts "Who dares shuffle my scripts? No matter, the monster behind the door is perfectly capable of defending the ruby. He will .destory anything or anyone in his path." As the wizard turns to leave you notice something falls from his robes, it is a small pouch. You run over to investigate what it was and see that it is enchantment powder. You could probably use it on your sword for the battle that lies ahead. </h3>
+<br>
 <h4>
   def enchant
 
@@ -16,7 +21,8 @@
           <label for='answer'>self.</label>
           <input id='answer' name='answer' type='text' placeholder='enter method' autocomplete='off' required>
           ({:description => 'enchanted sword'})
-          <br>end</h4>
+          <br>end<br><br>
+          sword.enchant</h4>
       </div>
       <button class='btn btn-sm btn-default'>Enchant Sword</button>
     </form>

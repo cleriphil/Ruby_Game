@@ -1,28 +1,30 @@
+<div>
+  <h4>
 <% if @choperror == true %>
   <p>You didn't quite do it right...</p>
   <p>Hint: monster = "monster"
-  <br> monster.kill_monster()
-  </p>
-<% else %>
-<h1>You did it! Your sword has a strange aura around it. Your sword now feels lighter and more powerful.</h1>
+  <br> monster.kill_monster( )
 <% end %>
 <% if @over3error == true %>
-<p>  The monster is still alive. Try again.</p>
-<p>  You haven't hit the monster enough times! Try again.</p>
+<p>  <em>Nil</em>iathan is has been cut to pieces.  Now he is only "<%= @monster.name %>", but he still has strength left to defend the ruby.  Try a couple more whacks.</p>
 <% elsif @under3error == true %>
-<p>Woah, you're being a bit harsh aren't you? Try again...but a little less psychotic.</p>
+<p>Woah, you're being a bit harsh aren't you? <em>Nil</em>iathan feeds off your anger and reassembles himself. Try again...but a little less psychotic.</p>
 <% end %>
-
 <hr>
-<h3>
-  As you walk confidently into the room in search of the ruby, you lose some of your confidence as you see a monster 10x your size between you and the ruby. The monster points it's claw hand at you and says; "I am the mighty <em>Nil</em>iathan! The ruby belongs to me and anyone who tries to take it will be .destoryed!" You take out your enchanted sword to do battle with the monster. It seems like it would take more than a few strikes to kill <em>Nil</em>iathan.
+</h4>
+</div>
+<h1>You did it! Your sword has a strange aura around it and somehow feels lighter and more powerful.</h1>
+<hr>
 
+<h3>
+  As you walk confidently into the monsters chamber in search of the ruby, you lose some of your confidence as you see a monster 10x your size between you and the ruby. The monster points it's clawed hand at you and says; "I am the mighty <em>Nil</em>iathan! The ruby belongs to me and anyone who tries to take it will be .destoryed!"</h3>
+  <h3> You take out your enchanted sword to do battle with the monster. It seems like it would take more than a few strikes to kill <em>Nil</em>iathan, but make sure to be measured in your approach...
+<br>
   *Hint: the monster is a string*
 </h3>
 
+<br>
 
-
-<h4>
 <p>def kill_monster</p>
 <form action='/page13' method='post'>
 
@@ -33,7 +35,8 @@
     <label for='answer2'>"<%= @monster.name %>".</label>
     <input id='answer2' name='answer2' type='text' placeholder='method' autocomplete='off' required>
   <br>end
-  <br>end</h4>
+  <br>end<br><br>
+  "<%= @monster.name %>".kill_monster
   </div>
   <button class='btn btn-sm btn-default'>Strike</button>
 </form>
