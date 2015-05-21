@@ -1,3 +1,4 @@
+<div class='items'>
 <h1>List of your items</h1>
 
 <% @items.each do |item| %>
@@ -5,9 +6,12 @@
     <li><%= item.description %> </li>
   </ul>
 <% end %>
+</div>
 
+<div class='story'>
 <h4>Each of these items will be very useful to you on your journey! Remember to use them when the time comes.</h4>
 
 <form action='/page1'>
   <button type='submit'>Quest Begins Here</button>
 </form>
+</div>

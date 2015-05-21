@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
   <h4>
 <% if @choperror == true %>
   <p>You didn't quite do it right...</p>
@@ -13,9 +13,11 @@
 <hr>
 </h4>
 </div>
+<div class='success'>
 <h1>You did it! Your sword has a strange aura around it and somehow feels lighter and more powerful.</h1>
 <hr>
-
+</div>
+<div class='story'>
 <h3>
   As you walk confidently into the monsters chamber in search of the ruby, you lose some of your confidence as you see a monster 10x your size between you and the ruby. The monster points it's clawed hand at you and says; "I am the mighty <em>Nil</em>iathan! The ruby belongs to me and anyone who tries to take it will be .destoryed!"</h3>
   <h3> You take out your enchanted sword to do battle with the monster. It seems like it would take more than a few strikes to kill <em>Nil</em>iathan, but make sure to be measured in your approach...
@@ -24,7 +26,8 @@
 </h3>
 
 <br>
-
+</div>
+<div class='code_block'>
 <p>def kill_monster</p>
 <form action='/page13' method='post'>
 
@@ -40,3 +43,4 @@
   </div>
   <button class='btn btn-sm btn-default'>Strike</button>
 </form>
+</div>

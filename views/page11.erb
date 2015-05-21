@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
   <h4>
 <% if @error == true %>
   <p>The wizard is coming back from his water break! Hurry! Try messing up the wizard's scripts, again.</p>
@@ -7,24 +7,27 @@
 </h4>
 </div>
 
+<div class='success'>
 <h1>Don't you feel super well rested and your memories fully formed?</h1>
 <hr>
+</div>
+
+<div class='story'>
 <h3>
 You continue down the passage to a large open chamber. Oh my! The evil wizard Daemon is blocking our path! He appears to be protecting the door to the chamber where the sacred ruby is located. You duck behind a rock and hide while you observe what he is doing.</h3>
 
 <h3> You realize he is reading from scripts and chanting evil spells to create a barrier around the door. Oh look, he's getting a drink of water! Now is our chance to stop him from continuing his spells! How can we do that? Hmm, it looks like the scripts are in a particular order....</h3>
 <br>
-<h4>
+</div>
+<div class='code_block'>
 def stop_spell
 <form action='/page11' method='post'>
   <div class='form-group'>
     <label for='answer'>self.</label>
     <input id='answer' name='answer' type='text' placeholder='enter method' autocomplete='off' required>
   <br>end<br><br>
-  scripts.stop_spell</h4>
+  scripts.stop_spell
   </div>
   <button class='btn btn-sm btn-default'>Stop Spell</button>
 </form>
-
-<!-- example of possible styling: -->
-<!-- <p class='second_line'><label for='answer'>self.</label></p> -->
+</div>

@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
 <h4>
 <% if @error == true %>
 <p>In order to fix your boo boo you need to <em>find</em> the right item. A consumable item should disappear once you use it.</p>
@@ -12,9 +12,13 @@
 <hr>
 </div>
 
+<div class='success'>
 <h1>Great work! Now you created a rope!</h1>
 
 <hr>
+</div>
+
+<div class='story'>
 <h4> Inventory</h4>
 <% Item.all.each do |item| %>
   <ul>
@@ -29,7 +33,7 @@
 <br>
 
 <h4>Try this: </h4>
-
+</div>
 <div class='code_block'>
   def fix_boo_boo(potion_id)<br>
   &emsp;total_potions = 1

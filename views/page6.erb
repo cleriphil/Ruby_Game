@@ -1,16 +1,21 @@
-<div>
+<div class='error'>
 <% if @error == true %>
 <h4><p>That was not the right door, the key does not work. We get it, reading is tough, especially reading evil markings.  Try another door.</p>
 <% end %>
 </h4>
 <hr>
 </div>
+
+<div class='success'>
 <h1>You have compared the markings!</h1>
 <hr>
+</div>
+<div class='story'>
 <h3>Using the markings from the door and the markings on the key you figure out that you are supposed to use the key on Door 2. Why dont you give it a try! </h3>
 
 <hr>
-
+</div>
+<div class='code_block'>
 <form action='/page6' method='post'>
   <button type='submit'>Door 1</button>
 </form>
@@ -22,3 +27,4 @@
 <form action='/page6' method='post'>
   <button type='submit'>Door 3</button>
 </form>
+</div>

@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
 <h4>
   <% if @error == true %>
   <p>Maybe you could put enough "string" to reach the bottom into a line (use that rope_array over there?) and connect them somehow...</p>
@@ -13,8 +13,12 @@
 <h4>
 </div>
 
+<div class='success'>
 <h1>The key has been added to your inventory</h1>
 <hr>
+</div>
+
+<div class='story'>
 <h3>Inventory</h3>
 <% @items.each do |item| %>
   <ul>
@@ -27,7 +31,7 @@
 <h3>It looks like six pieces of "string" tied or <em>joined</em> together to form a rope could reach the bottom... Look at this! There is an empty array in the corner...hmm I wonder...</h3>
 
 <h4> Lets try this, </h4>
-
+</div>
 <div class='code_block'>
     <p>def make_rope<br>
     &emsp;rope_array = [ ] <br>

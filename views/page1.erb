@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
 <% if @error == true %>
   <h4><p>The path is still unclear, try entering in the proper routing again to complete the server request for the cave_entrance page</p>
 <% end %>
@@ -10,14 +10,17 @@
 <hr>
 </div>
 
+<div class='success'>
 <h1>The minstrel doesn't know this ditty. </h1>
 <hr>
+</div>
 
+<div class='story'>
 <h3>Oops, seems like there was an error in loading the quest. Why don't you try to manually set your path? </h3>
 
 <br>
 <h4>Try filling in the gaps:</h4>
-
+</div>
 <div class='code_block'>
   <form action='/page1' method = "post">
     <div class="form-group">
