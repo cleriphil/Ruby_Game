@@ -9,22 +9,20 @@
 <% elsif @error_b == true %>
   <p>One or more of your 'methods' is wrong. Try again.</p>
 <% end %>
-<hr>
+
 <h4>
 </div>
 
 <div class='success'>
 <h1>The key has been added to your inventory</h1>
-<hr>
+
 </div>
 
 <div class='story'>
 <h3>Inventory</h3>
 <% @items.each do |item| %>
-  <ul>
-    <li><%= item.description %> </li>
-  </ul>
-<% end %><hr>
+    <p><%= item.description %> </p>
+<% end %>
 
 <h3>Continuing on your path through the cave you come to a large unlocked wooden door. As you walk through the door, it suddenly slams closed behind you. You attempt to open the door to no avail. Looking around, you notice a metal ring anchored to the cave walls with a pile of pieces of "string". As you keep exploring the area you notice a large drop off to the cave floor below. You think you can just make out a number of doors at the bottom. </h3>
 
@@ -47,6 +45,6 @@
       &emsp;rope = rope_array.
       <input id='third_spot' name='third_spot' type='text' autocomplete='off' placeholder='method' required>
       <br>end</p>
-    <button class='btn btn-default'>Create Rope</button>
+    </div>
+    <button class='btn'>Create Rope</button>
   </form>
-</div>

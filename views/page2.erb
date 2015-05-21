@@ -8,12 +8,12 @@
 <% elsif @error_b == true %>
   <p>Your 'instance method' is wrong. Try again.</p></h4>
 <% end %>
-<hr>
+
 </div>
 
 <div class='success'>
 <h1>The path is now clear!</h1>
-<hr>
+
 </div>
 
 <div class='story'>
@@ -24,14 +24,17 @@ This key might be useful later so perhaps you should add it to your inventory. B
 
 
 
-<hr>
-<h3>Inventory</h3>
-<% Item.all.each do |item| %>
-<ul>
-  <li><%= item.description %> </li>
-</ul>
-<% end %><hr>
+
 </div>
+
+<div class='inventory'>
+<h3>Inventory:</h3>
+<% Item.all.each do |item| %>
+  <p><%= item.description %> </p>
+<% end %>
+</div>
+
+
 <div class='code_block'>
 
   <p>def add_item_to_inventory<br>
@@ -46,6 +49,7 @@ This key might be useful later so perhaps you should add it to your inventory. B
     <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='instance method' required>
     <br>end</p>
   </div>
-    <button class='btn btn-default'>Add to Inventory</button>
-  </form>
 </div>
+<br>
+<button class='btn'>Add to Inventory</button>
+</form>
