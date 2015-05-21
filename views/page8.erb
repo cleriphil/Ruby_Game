@@ -1,24 +1,25 @@
 <div>
+  <h4>
   <% if @error == 1 %>
   <p>Your Torch would only serve to better illuminate your form and make it easier for CRUD to bite you.</p>
 
   <% elsif @error == 2 %>
-  <p>That was a good idea, the music did seem to soothe them a bit but they quickly remembered their goal, to eat you.</p>
+  <p>CRUD hates music, the philistine.  Now he is even more angry...</p>
 
   <% elsif @error == 3 %>
-  <p>You should probably hold keep that snack for later...</p>
+  <p>He smells your snack and is planning on taking it off your corpse once he is done with you...</p>
 
   <% elsif @error == 4 %>
-  <p>It does not seem like a rope would be a very good option for fending off cockroaches...</p>
+  <p>I guess you could try to tie him up, but he seems pretty wily. He would probably do some damage by the time you wrangled him.</p>
 
   <% elsif @error == 5 %>
-  <p>Hmmm... a key to fight off a horde of large cockroaches... I don't know... I guess you could try but...</p>
+  <p>A key huh? Good luck with that...</p>
 
   <% else %>
   <% end %>
 
 <% if @error == true %>
-<h4><p>Not good enough! You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last!</p>
+<h4><p>Well, you chose the right item, but that's not good enough! You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last!</p>
 <% end %>
 
 <% if @error_a == true %>
@@ -27,6 +28,7 @@
 <p>One or more of your methods is wrong. Try again.</p></h4>
 <% end %>
 <hr>
+</h4>
 </div>
 
 <h1>You yell: "I'M GONNA GIT YOU GOBLIN!"</h1>

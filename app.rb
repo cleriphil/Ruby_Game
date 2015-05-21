@@ -171,19 +171,19 @@ post('/page8') do
   answer3 = params.fetch('third_spot')
   if item.description == 'Torch'
     @error = 1
-    erb(:page9)
+    erb(:page8)
   elsif item.description == 'iPod'
     @error = 2
-    erb(:page9)
+    erb(:page8)
   elsif item.description == 'Snack'
     @error = 3
-    erb(:page9)
+    erb(:page8)
   elsif item.description == 'Rope'
     @error = 4
-    erb(:page9)
+    erb(:page8)
   elsif item.description == 'Key'
     @error = 5
-    erb(:page9)
+    erb(:page8)
   else # sword is chosen
     if answer1 == "each" && ((answer2 == "shift") | (answer2 == "shift()")) && answer3 == "part"
       erb(:page9)
