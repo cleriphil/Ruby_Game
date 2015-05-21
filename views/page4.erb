@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
 <h4>
 <% if @error == true %>
 <p>In order to fix your boo boo you need to <em>find</em> the right item. A consumable item should disappear once you use it.</p>
@@ -9,27 +9,30 @@
 <p>Your 'object' is wrong. Try again.</p>
 <% end %>
 </h4>
-<hr>
+
 </div>
 
+<div class='success'>
 <h1>Great work! Now you created a rope!</h1>
 
-<hr>
+
+</div>
+
+<div class='inventory'>
 <h4> Inventory</h4>
 <% Item.all.each do |item| %>
-  <ul>
-    <li><%= item.description %> </li>
-  </ul>
+    <p><%= item.description %> </p>
 <% end %>
-<hr>
 
+</div>
+<div class='story'>
 <h3>You now use your new rope to start rappelling down from the ledge to the cave floor below. Before you reach the bottom, your rope suddenly snaps. Did you really think six pieces of string would hold your weight?</h3>
 
 <h3>You scraped your knee on the way down. You begin to cry but remember you have a potion in your bag that you can use to heal your wound. After you find your potion and use it, it will be gone.</h3>
 <br>
 
 <h4>Try this: </h4>
-
+</div>
 <div class='code_block'>
   def fix_boo_boo(potion_id)<br>
   &emsp;total_potions = 1
@@ -43,7 +46,7 @@
     -= 1      # you just drank your only potion<br>
     &emsp;end <br>end<br><br>
     knee.fix_boo_boo()
+  </div>
     <br><br>
-    <button class='btn btn-default'>Fix Your Boo Boo</button>
+    <button class='btn'>Fix Your Boo Boo</button>
   </form>
-</div>

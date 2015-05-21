@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
   <h4>
 <% if @error == 1 %>
 <p>Oh no! The cockroaches are multiplying. And now they are angered over their fallen comerades!</p>
@@ -15,13 +15,20 @@
 <% elsif @error == 5 %>
 <p>Hmmm... a key to fight off a horde of large cockroaches... I don't know... I guess you could try but...</p>
 <% end %>
-<hr>
+
 </h4>
 </div>
-<h1>The goblin has been slain! What a mess...</h1>
-<hr>
-<h3>As you walk down the now unobstructed (and very messy) passage a flood of large cockroaches begins to spill out from every crack and crevice. If you don't act fast you will soon be overrun with the scurrying insects! Quickly choose one of you items to dispatch with them!</h3>
 
+<div class='success'>
+<h1>The goblin has been slain! What a mess...</h1>
+
+</div>
+
+<div class='story'>
+<h3>As you walk down the now unobstructed (and very messy) passage a flood of large cockroaches begins to spill out from every crack and crevice. If you don't act fast you will soon be overrun with the scurrying insects! Quickly choose one of you items to dispatch with them!</h3>
+</div>
+
+<div class='code_block'>
 <form action='/page9' method='post'>
   <div class='form-group'>
     <label for='item'>What item should you use to fight them off?</label>
@@ -30,6 +37,7 @@
         <option value='<%= item.id %>'><%= item.description %></option>
       <% end %>
     </select>
-    <button class='submit'>submit</button>
+  </div>
+  <button class='btn'>submit</button>
   </div>
 </form>

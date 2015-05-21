@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
   <h4>
 <% if @choperror == true %>
   <p>You didn't quite do it right...</p>
@@ -10,12 +10,14 @@
 <% elsif @under3error == true %>
 <p>Woah, you're being a bit harsh aren't you? <em>Nil</em>iathan feeds off your anger and reassembles himself. Try again...but a little less psychotic.</p>
 <% end %>
-<hr>
+
 </h4>
 </div>
+<div class='success'>
 <h1>You did it! Your sword has a strange aura around it and somehow feels lighter and more powerful.</h1>
-<hr>
 
+</div>
+<div class='story'>
 <h3>
   As you walk confidently into the monsters chamber in search of the ruby, you lose some of your confidence as you see a monster 10x your size between you and the ruby. The monster points it's clawed hand at you and says; "I am the mighty <em>Nil</em>iathan! The ruby belongs to me and anyone who tries to take it will be .destoryed!"</h3>
   <h3> You take out your enchanted sword to do battle with the monster. It seems like it would take more than a few strikes to kill <em>Nil</em>iathan, but make sure to be measured in your approach...
@@ -24,19 +26,21 @@
 </h3>
 
 <br>
-
+</div>
+<div class='code_block'>
 <p>def kill_monster</p>
 <form action='/page13' method='post'>
 
   <div class='form-group'>
-    <input id='answer1' name='answer1' type='text' placeholder='number of hits' autocomplete='off' required>
+    &emsp;<input id='answer1' name='answer1' type='text' placeholder='number of hits' autocomplete='off' required>
     .times( ) do
     <br>
-    <label for='answer2'>"<%= @monster.name %>".</label>
+    <label for='answer2'>&emsp;&emsp;"<%= @monster.name %>".</label>
     <input id='answer2' name='answer2' type='text' placeholder='method' autocomplete='off' required>
-  <br>end
+  <br>&emsp;end
   <br>end<br><br>
   "<%= @monster.name %>".kill_monster
   </div>
-  <button class='btn btn-sm btn-default'>Strike</button>
+  </div>
+  <button class='btn'>Strike</button>
 </form>

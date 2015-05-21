@@ -1,0 +1,65 @@
+body {
+  background: url("../images/scroll_background_page.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 15%;
+  padding-top: 15px;
+  line-height: 30px;
+  font-family: 'Press Start 2P', cursive;
+
+}
+
+img {
+  opacity: 0.8;
+  border-radius: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.title {
+  text-align: center;
+}
+
+/*.story {
+  background-color: #D8A36A;
+}*/
+
+.code_block {
+  background-color: lightgrey;
+  padding: 5px 10px 5px 15px;
+  border-radius: 10px;
+  font-family: 'Source Code Pro', cursive;
+}
+
+.story {
+  font-size: 15px;
+}
+
+.inventory {
+  font-size: 12px;
+  line-height: 5px;
+}
+
+.inventory ul {
+  list-style-type: none;
+}
+
+.error {
+  color: #C93636;
+}
+
+.success {
+  color: #164E16;
+}
+
+.btn {
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+body hr {
+  height: 5px;
+
+}

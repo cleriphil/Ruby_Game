@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
   <h4>
   <% if @error == 1 %>
   <p>Your Torch would only serve to better illuminate your form and make it easier for CRUD to bite you.</p>
@@ -22,14 +22,16 @@
 <h4><p>Well, you chose the right item, but that's not good enough! You are gonna need to slice off one body part from the goblin's body array at a time.  Start with the first limb and make sure to remove the head last! <br>One or more of your methods is wrong.</p>
 <% end %>
 
-<hr>
+
 </h4>
 </div>
 
+<div class='success'>
 <h1>You yell: "I'M GONNA GIT YOU GOBLIN!"</h1>
 
-<hr>
 
+</div>
+<div class='story'>
 <h3>The goblin CRUD momentarily loses all confidence in himself and stops his charge.  You need to pick a weapon to quckly dispatch the goblin before he ragains his former courage.  The only way to truly kill a goblin is to remove all his limbs one by one and then his head.</h3>
 
 
@@ -40,6 +42,7 @@
       <option value='<%= item.id %>'><%= item.description %></option>
     <% end %>
   </select><br><br>
+</div>
 <div class='code_block'>
   def dismember<br>
   &emsp;goblin_array = ["left_leg", "right_leg", "left_arm", "right_arm", "head" ]<br>
@@ -58,9 +61,9 @@
   <br>
   <br>
   CRUD.dismember
+  <br>
 </div>
-  <br>
-  <br>
-  And that's what it's all about!<br>
-  <button type='submit'>Slice and Dice</button>
+<br>
+And that's what it's all about!<br>
+<button class='btn'>Slice and Dice</button>
 </form>

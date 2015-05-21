@@ -1,4 +1,4 @@
-<div>
+<div class='error'>
 <% if @error == true %>
 <h4><p>You need to use the markings on the key as a way to <em>identify</em> the door the key belongs to.</p>
 <% end %>
@@ -7,11 +7,15 @@
 <% elsif @error_b == true %>
 <p>Your 'key' is wrong. Try again.</p></h4>
 <% end %>
-<hr>
+
 </div>
 
+<div class='success'>
 <h1>Wow, that feels better.</h1>
-<hr>
+
+</div>
+
+<div class='story'>
 <h3>You stand up, the potion the king gave you worked like a charm and you feel good as new. Now that the tears have stopped you see before you three doors, each with unique markings above them.  The writing is some ancient and evil text, unintelligible to you.  You try the first door, it is locked.  You try the second and third, they are locked too.</h3>
 
 <h3>Could you somehow compare the markings on the key to the markings on the door to figure out what door the key goes to?</h3>
@@ -20,7 +24,7 @@
 
 
 <h4>What if...</h4>
-
+</div>
 <div class='code_block'>
   get '/pick_the_right_door' do<br>
   <form action='/page5' method="post">
@@ -31,7 +35,8 @@
     <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='which key?' required>
     )
     <br>
-    end<br><br>
-    <button class='btn btn-default'>Pick Right Door</button>
+    end
+  </div>
+    <br><br>
+    <button class='btn'>Pick Right Door</button>
   </form>
-</div>
