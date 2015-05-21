@@ -5,6 +5,6 @@ class Enemy < ActiveRecord::Base
       @new_name = @new_name.chop()
       self.update({:name => @new_name})
     end
-    self.name
+    self
   end
 end
