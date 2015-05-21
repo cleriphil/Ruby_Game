@@ -64,11 +64,7 @@ end
 
 get('/page3') do
   @items = Item.all()
-  if Item.all().empty?()
-    erb(:error_gifts)
-  else
-    erb(:page3)
-  end
+  erb(:page3)
 end
 
 post('/page3') do
