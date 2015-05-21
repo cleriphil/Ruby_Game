@@ -32,12 +32,12 @@
 <form action='/page13' method='post'>
 
   <div class='form-group'>
-    <input id='answer1' name='answer1' type='text' placeholder='number of hits' autocomplete='off' required>
+    &emsp;<input id='answer1' name='answer1' type='text' placeholder='number of hits' autocomplete='off' required>
     .times( ) do
     <br>
-    <label for='answer2'>"<%= @monster.name %>".</label>
+    <label for='answer2'>&emsp;&emsp;"<%= @monster.name %>".</label>
     <input id='answer2' name='answer2' type='text' placeholder='method' autocomplete='off' required>
-  <br>end
+  <br>&emsp;end
   <br>end<br><br>
   "<%= @monster.name %>".kill_monster
   </div>
