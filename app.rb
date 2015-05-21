@@ -164,7 +164,7 @@ get('/page8') do
 end
 
 post('/page8') do
-  item_id = para,s.fetch('item')
+  item_id = params.fetch('item')
   item = Item.find(item_id)
   answer1 = params.fetch('first_spot')
   answer2 = params.fetch('second_spot')
