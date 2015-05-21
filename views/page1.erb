@@ -16,18 +16,19 @@
 <h3>Oops, seems like there was an error in loading the quest. Why don't you try to manually set your path? </h3>
 
 <br>
-<h4>Try filling in the gaps:<br>
+<h4>Try filling in the gaps:</h4>
 
+<div class='code_block'>
+  <form action='/page1' method = "post">
+    <div class="form-group">
 
-<form action='/page1' method = "post">
-  <div class="form-group">
-
-    <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder = 'server request' required>
-    <label for='first_spot'>'/cave_entrance' do</label><br>
-    erb(:
-    <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder = "erb file name" required>)
-    <label for='second_spot'></label><br>
-    end</h4>
-  </div>
-  <button type='submit'>Find the path</button>
-</form>
+      <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder = 'server request' required>
+      '/cave_entrance' do<br>
+      &emsp;&emsp;erb(:
+      <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder = "erb file name" required>)
+      <label for='second_spot'></label><br>
+      end
+    </div>
+    <button class='btn btn-default'>Find the path</button>
+  </form>
+</div>

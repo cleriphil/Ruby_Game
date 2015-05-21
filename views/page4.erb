@@ -28,19 +28,22 @@
 <h3>You scraped your knee on the way down. You begin to cry but remember you have a potion in your bag that you can use to heal your wound. After you find your potion and use it, it will be gone.</h3>
 <br>
 
-<h4>Try this: <br>
-  def fix_boo_boo <br>
-  total_potions = 1
-<form action='/page4' method='post'>
-  <label for='first_spot'>potion = Item.</label>
-  <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='method' required>
-  (params.fetch('potion_id').to_i)<br>
-  potion.drink       #consumes potion to fix boo boo<br>
-  if potion.drink <br>
-  <input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='object' required>
-  <label for='second_spot'>-= 1      # you just drank your only potion right </label><br>
-  end <br><br>
-  knee.fix_boo_boo
-  <br></h4>
-  <button type='submit'>Fix Your Boo Boo</button>
-</form>
+<h4>Try this: </h4>
+
+<div class='code_block'>
+  def fix_boo_boo(potion_id)<br>
+  &emsp;total_potions = 1
+  <form action='/page4' method='post'>
+    &emsp;potion = Potion.
+    <input id='first_spot' name='first_spot' type='text' autocomplete='off' placeholder='method' required>
+    (potion_id)<br>
+    &emsp;potion.drink       #consume your potion to fix boo boo<br>
+    &emsp;if potion.drink <br>
+    &emsp;&emsp;<input id='second_spot' name='second_spot' type='text' autocomplete='off' placeholder='object' required>
+    -= 1      # you just drank your only potion<br>
+    &emsp;end <br>end<br><br>
+    knee.fix_boo_boo()
+    <br><br>
+    <button class='btn btn-default'>Fix Your Boo Boo</button>
+  </form>
+</div>
