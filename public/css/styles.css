@@ -15,6 +15,11 @@ img {
   margin-right: auto;
 }
 
+.abc {
+  display: inline-block;
+  margin: 0 auto;
+  }
+
 .bug {
   float: left;
   margin: 0px 0px 15px 15px;
@@ -27,16 +32,16 @@ img {
 
 .ruby {
   opacity: 0.8;
-  border-radius: 80px;
+  border-radius: 200px;
+  width: 30%;
+  height: 30%;
 }
 
 .title {
   text-align: center;
 }
 
-/*.story {
-  background-color: #D8A36A;
-}*/
+
 
 .code_block {
   background-color: lightgrey;
@@ -48,6 +53,9 @@ img {
 .story {
   font-size: 15px;
 }
+
+
+
 
 .inventory {
   font-size: 12px;
