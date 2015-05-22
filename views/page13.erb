@@ -34,12 +34,12 @@
 <form action='/page13' method='post'>
 
   <div class='form-group'>
-    &emsp;<input id='answer1' name='answer1' type='text' class='placeholder' placeholder='number of hits' autocomplete='off' required>
+    &emsp;&emsp;<input id='answer1' name='answer1' type='text' class='placeholder' placeholder='number of hits' autocomplete='off' required>
     .times( ) do
     <br>
-    <label style="color:red" for='answer2'>&emsp;&emsp;"<%= @monster.name %>".</label>
+    <label style="color:red" for='answer2'>&emsp;&emsp;&emsp;&emsp;&emsp;"<%= @monster.name %>".</label>
     <input id='answer2' name='answer2' type='text' class='placeholder' placeholder='method' autocomplete='off' required>
-  <br>&emsp;end
+  <br>&emsp;&emsp;end
   <br>end<br><br>
   <span style="color:red">"<%= @monster.name %>"</span>.kill_monster
   </div>

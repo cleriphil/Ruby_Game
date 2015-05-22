@@ -28,10 +28,10 @@
 <div class='code_block'>
   get '/pick_the_right_door' do<br>
   <form action='/page5' method="post">
-    &emsp;key_id =
+    &emsp;&emsp;key_id =
     <input id='first_spot' name='first_spot' type='text' autocomplete='off' class='placeholder' placeholder='request' required>
     .fetch("markings_from_key").to_i( )<br>
-    &emsp;right_door = Door.find(
+    &emsp;&emsp;right_door = Door.find(
     <input id='second_spot' name='second_spot' type='text' autocomplete='off' class='placeholder' placeholder='which key?' required>
     )
     <br>
