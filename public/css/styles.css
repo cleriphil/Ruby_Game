@@ -15,8 +15,14 @@ img {
   margin-right: auto;
 }
 
-img .bug {
-  display: inline;
+.bug {
+  float: left;
+  margin: 0px 0px 15px 15px;
+}
+.lastpage {
+  float: left;
+  margin: 0px 0px 15px 15px;
+
 }
 
 .ruby {
@@ -74,4 +80,8 @@ body hr {
   color: #4C934C;
   font-family: 'Source Code Pro', cursive;
   font-size: 15px;
+}
+
+.potion {
+  margin: 0 auto;
 }

@@ -15,8 +15,10 @@
 </div>
 <div class='success'>
 <h1>You did it! Your sword has a strange aura around it and somehow feels lighter and more powerful.</h1>
-
 </div>
+<img src="/images/enchant_sword.png" height=30% width=30%>
+
+
 <div class='story'>
 <h3>
   As you walk confidently into the monsters chamber in search of the ruby, you lose some of your confidence as you see a monster 10x your size between you and the ruby. The monster points it's clawed hand at you and says; "I am the mighty <em>Nil</em>iathan! The ruby belongs to me and anyone who tries to take it will be .destoryed!"</h3>
@@ -24,9 +26,9 @@
 <br>
   *Hint: the monster is a string*
 </h3>
-
-<br>
 </div>
+<img src="/images/dragon.png" height=30% width=30%>
+
 <div class='code_block'>
 <p>def kill_monster</p>
 <form action='/page13' method='post'>
@@ -35,11 +37,11 @@
     &emsp;<input id='answer1' name='answer1' type='text' class='placeholder' placeholder='number of hits' autocomplete='off' required>
     .times( ) do
     <br>
-    <label for='answer2'>&emsp;&emsp;"<%= @monster.name %>".</label>
+    <label style="color:red" for='answer2'>&emsp;&emsp;"<%= @monster.name %>".</label>
     <input id='answer2' name='answer2' type='text' class='placeholder' placeholder='method' autocomplete='off' required>
   <br>&emsp;end
   <br>end<br><br>
-  "<%= @monster.name %>".kill_monster
+  <span style="color:red">"<%= @monster.name %>"</span>.kill_monster
   </div>
   </div>
   <button class='btn'>Strike</button>
