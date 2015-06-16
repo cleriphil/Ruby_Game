@@ -1,5 +1,12 @@
 # Ruby Game
 
+## Team Members
+
+* [Ian Bevel](github.com/ianofearth)
+* [Kim Dang](github.com/kimdangg)
+* [Cleri Philiastides](github.com/cleriphil)
+* [Andrew Lee](github.com/andrewlhy)
+
 ## Description
 
 Journey through a quest to find the missing ruby gem. Test your knowledge of Ruby to fight enemies and overcome obstacles. Your adventure awaits.
@@ -26,11 +33,3 @@ $ ruby app.rb
 ```
 ## License
 MIT License 2015
-
-
-## Team Members
-
-* [Ian Bevel](github.com/ianofearth)
-* [Kim Dang](github.com/kimdangg)
-* [Cleri Philiastides](github.com/cleriphil)
-* [Andrew Lee](github.com/andrewlhy)
