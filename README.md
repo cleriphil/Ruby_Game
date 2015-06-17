@@ -2,10 +2,10 @@
 
 ## Team Members
 
-* [Ian Bevel](github.com/ianofearth)
-* [Kim Dang](github.com/kimdangg)
-* [Cleri Philiastides](github.com/cleriphil)
-* [Andrew Lee](github.com/andrewlhy)
+* Ian Bevel: github.com/ianofearth
+* Kim Dang: github.com/kimdangg
+* Cleri Philiastides: github.com/cleriphil
+* Andrew Lee: github.com/andrewlhy
 
 ## Description
 
